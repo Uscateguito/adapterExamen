@@ -10,12 +10,12 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
-public class EmployeeHttpClient implements EmployeeService {
+public class HttpService implements EmployeeService {
     private static final String API_URL = System.getenv("API_URL");
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper;
 
-    public EmployeeHttpClient() {
+    public HttpService() {
         this.objectMapper = new ObjectMapper();
         this.objectMapper.registerModule(new JavaTimeModule());
     }

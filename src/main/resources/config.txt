@@ -1,1 +1,1 @@
-adapter=database
+adapter=http

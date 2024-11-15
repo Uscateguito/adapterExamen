@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.models.Employee;
 import org.example.services.DatabaseService;
-import org.example.services.EmployeeHttpClient;
+import org.example.services.HttpService;
 import org.example.services.EmployeeService;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class Main {
 
         // La base de datos se configura en el archivo config.txt y puede ser http o database
         if ("http".equalsIgnoreCase(adapterType)) {
-            employeeService = new EmployeeHttpClient();
+            employeeService = new HttpService();
             System.out.println("using the " + adapterType + " adapter");
         } else if ("database".equalsIgnoreCase(adapterType)) {
             employeeService = new DatabaseService();
