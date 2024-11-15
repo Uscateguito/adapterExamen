@@ -38,15 +38,18 @@ public class EmployeeHttpClient implements EmployeeService {
     
     @Override
     public List<Employee> getEmployees() throws Exception {
-        String endpoint = API_URL + "/employees";
+        System.out.println("API_URL: " + API_URL);
+        String endpoint = API_URL + "/Employees";
         String response = fetchEmployee(endpoint);
         return  objectMapper.readValue(response, objectMapper.getTypeFactory().constructCollectionType(List.class, Employee.class));
     }
     
     @Override
     public Employee getEmployeeById(int id) throws Exception {
-        String endpoint = API_URL + "/employees/" + id;
+        String endpoint = API_URL + "/Employees/" + id;
         String response = fetchEmployee(endpoint);
         return objectMapper.readValue(response, Employee.class);
     }
 }
+
+

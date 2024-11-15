@@ -2,7 +2,8 @@ package org.example.models;
 
 import lombok.*;
 
-@Data
+@Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

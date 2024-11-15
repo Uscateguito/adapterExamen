@@ -17,7 +17,7 @@ public class Main {
         Properties properties = new Properties();
         
         try {
-            properties.load(Files.newBufferedReader(Paths.get("src/main/resources/config.txt")));
+            properties.load(Files.newBufferedReader(Paths.get("adapter/src/main/resources/config.txt")));
         } catch (IOException e) {
             e.printStackTrace();
             return;
@@ -26,6 +26,7 @@ public class Main {
         String adapterType = properties.getProperty("adapter");
         EmployeeService employeeService;
 
+        // La base de datos se configura en el archivo config.txt y puede ser http o database
         if ("http".equalsIgnoreCase(adapterType)) {
             employeeService = new EmployeeHttpClient();
             System.out.println("using the " + adapterType + " adapter");
@@ -48,3 +49,6 @@ public class Main {
 
     }
 }
+
+
+
